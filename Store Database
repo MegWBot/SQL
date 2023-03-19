@@ -1,0 +1,36 @@
+---Create numbered table of items for a store. Include item name, department, price, quantity, popularity
+
+--create a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, department TEXT, price INTEGER, quantity INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "apple", "produce", 1.99, 47, 1);
+INSERT INTO store VALUES (2, "potatoes", "produce", .89, 108, 2);
+INSERT INTO store VALUES (3,"cat food", "pet_supplies", 2.49, 33, 3);
+INSERT INTO store VALUES (4,"dish_soap", "household", 3.99, 12, 4);
+INSERT INTO store VALUES (5, "soup", "canned_goods", 2.79, 12, 5);
+INSERT INTO store VALUES (6,"chocolate", "candy", 5, 4, 6);
+INSERT INTO store VALUES (7, "gum", "candy", 3.99, 20, 7); 
+INSERT INTO store VALUES (8, "milk", "dairy", 4.99, 12, 8);
+INSERT INTO store VALUES (9, "cheese", "dairy", 3.99, 8, 9);
+INSERT INTO store VALUES (10, "ice cream", "frozen_desserts", 5.50, 9, 10);
+INSERT INTO store VALUES (11, "diapers", "babies", 10, 6, 11);
+INSERT INTO store VALUES (12, "butter", "dairy", 3.99, 14, 12);
+INSERT INTO store VALUES (13, "tuna", "canned_goods", 2.99, 24, 13);
+INSERT INTO store VALUES (14, "sugar", "baking", 5.99, 16, 14);
+INSERT INTO store VALUES (15, "tea", "tea_and_coffee", 7, 30, 15);
+
+SELECT * FROM store;
+
+--Display by price
+SELECT * from store
+ORDER BY price;
+
+--display by quantity
+SELECT * from store
+ORDER BY item;
+
+--average price of dairy section items
+SELECT AVG(price) "avg dairy item price"
+FROM store
+WHERE "department" = "dairy";
