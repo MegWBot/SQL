@@ -54,9 +54,9 @@ AND orderid <> 'Order ID'
 
 /* List all products sold in February in Los Angeles, and how many of each were sold */
 
-SELECT distinct product, quantity
+SELECT product, sum(quantity)
 FROM BIT_DB.FebSales
 Where orderdate between '02/01/19% 00:00' and '02/28/19% 00:00'
 and location like '%Los Angeles%'
-Order by quantity desc;
-
+GROUP BY product
+ORDER BY quantity desc
