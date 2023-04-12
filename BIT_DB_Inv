@@ -56,7 +56,6 @@ AND orderid <> 'Order ID'
 
 SELECT product, sum(quantity)
 FROM BIT_DB.FebSales
-Where orderdate between '02/01/19% 00:00' and '02/28/19% 00:00'
-and location like '%Los Angeles%'
+Where location like '%Los Angeles%'
 GROUP BY product
-ORDER BY quantity desc
+ORDER BY quantity desc;
